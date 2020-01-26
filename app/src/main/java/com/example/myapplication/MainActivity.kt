@@ -5,8 +5,13 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +24,22 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        val rollButton: Button = findViewById(R.id.roll_button)
+
+        rollButton.setOnClickListener{
+            Toast.makeText(this,"Button Clicked",Toast.LENGTH_LONG).show()
+//            getResults()
+        }
     }
+
+    private fun getResults(){
+        val results : ImageView = findViewById(R.id.result)
+
+//        results.setText(Random.nextInt(7).toString())
+//        TODO()
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
